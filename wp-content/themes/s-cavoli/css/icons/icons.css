@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url("icons.eot?3adb3eec0c747fd6a4537a43c26807cf?#iefix") format("embedded-opentype"),
+url("icons.woff2?3adb3eec0c747fd6a4537a43c26807cf") format("woff2"),
+url("icons.woff?3adb3eec0c747fd6a4537a43c26807cf") format("woff");
+}
+
+.icon, .icon-icons {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.icon-icons {
+  width: 1em;
+  height: 1em;
+  position: relative;
+  fill: currentColor;
+}
+
+.icon {
+  font-family: 'icons';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.icon-arrow-down-left:before { content: "\f101"; }
+.icon-arrow-down-right:before { content: "\f102"; }
+.icon-arrow-left:before { content: "\f103"; }
+.icon-arrow-right:before { content: "\f104"; }
+.icon-arrow-up-left:before { content: "\f105"; }
+.icon-arrow-up-right:before { content: "\f106"; }
+.icon-arrow-up:before { content: "\f107"; }
+.icon-hamburger:before { content: "\f108"; }
+.icon-instagram:before { content: "\f109"; }
+.icon-left:before { content: "\f10a"; }
+.icon-linkedIn:before { content: "\f10b"; }
+.icon-office:before { content: "\f10c"; }
+.icon-ray:before { content: "\f10d"; }
