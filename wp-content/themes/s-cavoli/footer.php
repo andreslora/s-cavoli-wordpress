@@ -17,23 +17,10 @@
 		<div class="flex flex-col lg:flex-row justify-between gap-4 pb-16 md:pb-[200px]">
 			<div class="newsletter">
 				<div class="description">
-					<h3>Cambiemos el futuro de la comunicacion.</h3>
+					<h3>Cambiemos el futuro de la comunicación.</h3>
 					<p>¡Cuéntanos sobre tu marca o empresa!</p>
 				</div>
-				<form class="form-newsletter">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="E-mail*">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Háblanos sobre tu proyecto...">
-					</div>
-					<div class="flex justify-end">
-						<button type="submit" class="btn btn-large btn-primary"><span>enviar</span></button>
-					</div>
-				</form>
-				<div class="message-sent hidden">
-					<p>¡Tu mensaje ha sido enviado de manera exitosa!</p>
-				</div>
+				<?php echo do_shortcode('[contact-form-7 id="15741a2" title="¡Cuéntanos sobre tu marca o empresa!"]'); ?>
 			</div>
 			<div class="main-nav-footer">
 				<div class="btn-up">
