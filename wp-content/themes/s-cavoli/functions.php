@@ -205,6 +205,39 @@ class Second_Walker_Nav_Menu extends Walker_Nav_Menu
 		$output .= '</a>';
 	}
 }
+
+function get_header_classes()
+{
+	$classes = 'header-secondary';
+	$pages_ids = [21, 56];
+	if (is_front_page() || in_array(get_the_ID(), $pages_ids)) {
+		$classes = '';
+	}
+	return $classes;
+}
+
+function check_active_project_taxonomy($term)
+{
+	if (is_tax('categoria', $term->slug)) {
+		return 'active';
+	}
+	return '';
+}
+
+function get_taxonomy_permalink_by_slug($slug, $taxonomy)
+{
+	// Get the term object
+	$term = get_term_by('slug', $slug, $taxonomy);
+
+	// Check if the term exists and return its permalink
+	if ($term) {
+		return get_term_link($term);
+	}
+
+	// Return false if the term does not exist
+	return false;
+}
+
 /**
  * Implement the Custom Header feature.
  */

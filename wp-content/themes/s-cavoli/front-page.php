@@ -83,7 +83,7 @@ get_header();
                             <div class="description-most-recent">
                                 <h2>LO MÁS <span>RECIENTE</span> </h2>
                                 <div class="flex flex-col md:flex-row gap-2">
-                                    <a href="all-project.html" class="btn btn-large btn-secondary"><span>Más proyectos</span></a>
+                                    <a href="<?php echo get_post_type_archive_link('proyectos'); ?>" class="btn btn-large btn-secondary"><span>Más proyectos</span></a>
                                     <a href="projects.html" class="btn btn-large btn-tertiary"><span>leer más</span></a>
                                 </div>
                             </div>

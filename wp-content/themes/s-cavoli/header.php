@@ -24,7 +24,7 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	<header>
+	<header class="<?php echo get_header_classes(); ?>">
 		<div class="container-fluid">
 			<div class="flex items-center justify-between gap-8">
 				<nav class="main-nav">
@@ -34,7 +34,7 @@
 					<ul class="main-menu open">
 						<?php
 						wp_nav_menu([
-							'menu' => 1, // Replace 'your-menu-id' with the ID of your menu
+							'menu' => 2, // Replace 'your-menu-id' with the ID of your menu
 							'container'      => false,
 							'items_wrap'     => '%3$s',
 							'walker'         => new Primary_Walker_Nav_Menu(),

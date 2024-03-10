@@ -3076,7 +3076,21 @@
     padding-right: 376px;
   }
 }.content-contact-form > .container-fluid .form-contact{
+  display: block;
   width: 100%;
+}.content-contact-form > .container-fluid .form-contact > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}.content-contact-form > .container-fluid .form-contact{
+  padding-bottom: 1rem;
+}@media (min-width: 768px){.content-contact-form > .container-fluid .form-contact > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+  }.content-contact-form > .container-fluid .form-contact{
+    padding-bottom: 1.5rem;
+  }
 }.content-contact-form > .container-fluid .form-contact .form-group{
   display: block;
   width: 100%;
@@ -3150,11 +3164,41 @@
   }.content-contact-form > .container-fluid .form-contact p{
     line-height: 24px;
   }
-}.content-contact-form > .container-fluid .form-contact .list-opcions{
+}.content-contact-form > .container-fluid .form-contact .wpcf7-form-control-wrap{
+  width: 100%;
+}.content-contact-form > .container-fluid .form-contact .wpcf7-form-control-wrap .wpcf7-form-control.wpcf7-checkbox{
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-}.content-contact-form > .container-fluid .form-contact .list-opcions li a.active{
+}.content-contact-form > .container-fluid .form-contact .wpcf7-form-control-wrap .wpcf7-form-control.wpcf7-checkbox .wpcf7-list-item label input{
+  display: none;
+}.content-contact-form > .container-fluid .form-contact .wpcf7-form-control-wrap .wpcf7-form-control.wpcf7-checkbox .wpcf7-list-item label span{
+  position: relative;
+  display: inline-flex;
+  height: 36px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(44 44 44 / var(--tw-border-opacity));
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-family: cooperHewitt, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgb(44 44 44 / var(--tw-text-opacity));
+}.content-contact-form > .container-fluid .form-contact .wpcf7-form-control-wrap .wpcf7-form-control.wpcf7-checkbox .wpcf7-list-item label span:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(44 44 44 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}.content-contact-form > .container-fluid .form-contact .wpcf7-form-control-wrap .wpcf7-form-control.wpcf7-checkbox .wpcf7-list-item label input:checked + span{
   --tw-bg-opacity: 1;
   background-color: rgb(44 44 44 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -4496,6 +4540,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }footer .container-fluid .newsletter .form-newsletter .form-group small{
   display: none;
+}footer .container-fluid .newsletter .wpcf7-response-output{
+  margin-top: 1.5rem;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(244 212 73 / var(--tw-border-opacity));
+  padding-top: 1.5rem;
+  font-family: circularStd, serif;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }footer .container-fluid .newsletter .message-sent{
   margin-top: 1.5rem;
   border-top-width: 1px;
@@ -4657,10 +4713,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}.space-y-6 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }.space-y-5 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -4669,6 +4721,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-y-reverse: 0;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}.space-y-6 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }.space-y-3 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -4708,8 +4764,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 4rem;
 }.pb-8{
   padding-bottom: 2rem;
-}.pb-4{
-  padding-bottom: 1rem;
 }.pb-\[124px\]{
   padding-bottom: 124px;
 }.pb-3{
@@ -4724,6 +4778,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 100px;
 }.pb-1{
   padding-bottom: 0.25rem;
+}.pb-4{
+  padding-bottom: 1rem;
 }.pt-8{
   padding-top: 2rem;
 }.text-center{
@@ -4782,10 +4838,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     gap: 2.25rem;
   }.md\:gap-4{
     gap: 1rem;
-  }.md\:space-y-10 > :not([hidden]) ~ :not([hidden]){
-    --tw-space-y-reverse: 0;
-    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
   }.md\:space-y-6 > :not([hidden]) ~ :not([hidden]){
     --tw-space-y-reverse: 0;
     margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -4798,6 +4850,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     --tw-space-y-reverse: 0;
     margin-top: calc(112px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(112px * var(--tw-space-y-reverse));
+  }.md\:space-y-10 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
   }.md\:space-y-20 > :not([hidden]) ~ :not([hidden]){
     --tw-space-y-reverse: 0;
     margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -4808,8 +4864,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 200px;
   }.md\:pb-\[62px\]{
     padding-bottom: 62px;
-  }.md\:pb-6{
-    padding-bottom: 1.5rem;
   }.md\:pb-20{
     padding-bottom: 5rem;
   }.md\:pb-12{
