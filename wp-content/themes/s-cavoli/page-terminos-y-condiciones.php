@@ -8,7 +8,7 @@ get_header();
             <h5>Actualizado a Diciembre 2023</h5>
         </div>
         <div class="container-fluid">
-            <div class="block space-y-12 md:space-y-20">
+            <div class="text">
                 <?php the_content(); ?>
             </div>
         </div>

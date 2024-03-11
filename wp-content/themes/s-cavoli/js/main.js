@@ -43,6 +43,15 @@
       },
     });
 
+    var swiper = new Swiper(".mySwiperJournal", {
+      slidesPerView: "auto",
+      loop: true,
+      navigation: {
+        nextEl: ".next",
+        prevEl: ".prev",
+      },
+    });
+
     var swiperInspires = new Swiper(".swiperInspires", {
       slidesPerView: "auto",
       loop: true,
@@ -75,6 +84,11 @@
     });
 
     $('#contact-form-button').addClass('md:w-auto');
+
+    $('.join-team-file').change(function () {
+      var filename = $(this).val().split('\\').pop();
+      $(this).closest('.btn-file').find('.file-name').text(filename).show();
+    });
 
   });
 

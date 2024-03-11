@@ -7,12 +7,12 @@ get_header();
             <div class="description">
                 <ul class="list-networks">
                     <li>
-                        <a href="#!">
+                        <a href="https://www.instagram.com/s.cavoli/" target="_blank">
                             <i class="icon icon-instagram"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="#!">
+                        <a href="https://www.linkedin.com/company/s-cavoli/?originalSubdomain=es" target="_blank">
                             <i class="icon icon-linkedIn"></i>
                         </a>
                     </li>
@@ -34,7 +34,7 @@ get_header();
                             </a>
                         </li>
                     </ul>
-                    <a href="#!" class="btn btn-large btn-primary"><span>lee nuestro manifesto</span></a>
+                    <a href="<?php echo get_permalink(17); ?>" class="btn btn-large btn-primary"><span>lee nuestro manifesto</span></a>
                 </div>
             </div>
         </div>
@@ -45,14 +45,14 @@ get_header();
                 <div class="block text-center relative z-10">
                     <i class="icon icon-office"></i>
                     <h2>THE <br> <b>OFFICE</b></h2>
-                    <a href="#!" class="btn btn-large btn-primary"><span>Conoce más</span></a>
+                    <a href="<?php echo get_permalink(17); ?>" class="btn btn-large btn-primary"><span>Conoce más</span></a>
                 </div>
             </div>
             <div class="card-office" style="background-image: url('<?php echo get_theme_image_path('bg-office-2.jpg'); ?>');">
                 <div class="block text-center relative z-10">
                     <i class="icon icon-ray"></i>
                     <h2>THE <br> <b>STUDIO</b></h2>
-                    <a href="#!" class="btn btn-large btn-primary"><span>Conoce más</span></a>
+                    <a href="<?php echo get_permalink(17); ?>" class="btn btn-large btn-primary"><span>Conoce más</span></a>
                 </div>
             </div>
         </div>
@@ -257,7 +257,7 @@ get_header();
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
                 <div class="description">
                     <h2>QUEREMOS SOÑAR <br class="hidden md:block"> <span>CONTIGO</span></h2>
-                    <a href="#!" class="btn btn-large btn-secondary"><span>seamos disruptivos</span></a>
+                    <a href="<?php echo get_permalink(17); ?>" class="btn btn-large btn-secondary"><span>seamos disruptivos</span></a>
                 </div>
                 <i class="icon icon-arrow-up-left text-[32px] text-semantic-black hidden md:block"></i>
             </div>
