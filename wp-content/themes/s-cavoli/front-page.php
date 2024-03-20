@@ -17,7 +17,7 @@ get_header();
                         </a>
                     </li>
                 </ul>
-                <a href="index.html" class="logo">
+                <a href="<?php echo get_post_type_archive_link('proyectos'); ?>" class="logo">
                     <img src="<?php echo get_theme_image_path('logo-white.png'); ?>" alt="Logo s-cavoli">
                 </a>
                 <div class="block space-y-4 md:space-y-6 max-w-[540px] mx-auto">
@@ -88,35 +88,29 @@ get_header();
                                 </div>
                             </div>
                             <div class="swiper mySwiper2">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide slide">
-                                        <figure class="thumb">
-                                            <img src="<?php echo get_theme_image_path('img-slide-1.jpg'); ?>" alt="Imagen slide" />
-                                        </figure>
-                                        <div class="caption">
-                                            <h4>MERCASID</h4>
-                                            <h3>Lorem Ipsum Dorem sit, Amet, consectur.</h3>
-                                        </div>
+                                <?php
+                                // Get 'proyectos' posts
+                                $proyectos_posts = new WP_Query(array(
+                                    'post_type' => 'proyectos',
+                                    'posts_per_page' => -3,
+                                ));
+
+                                if ($proyectos_posts->have_posts()) : ?>
+                                    <div class="swiper-wrapper">
+                                        <?php while ($proyectos_posts->have_posts()) : $proyectos_posts->the_post(); ?>
+                                            <div class="swiper-slide slide">
+                                                <figure class="thumb">
+                                                    <?php the_post_thumbnail(); ?>
+                                                </figure>
+                                                <div class="caption">
+                                                    <h4><?php the_title(); ?></h4>
+                                                    <h3><?php the_excerpt(); ?></h3>
+                                                </div>
+                                            </div>
+                                        <?php endwhile; ?>
                                     </div>
-                                    <div class="swiper-slide slide">
-                                        <figure class="thumb">
-                                            <img src="<?php echo get_theme_image_path('img-slide-4.jpg'); ?>" alt="Imagen slide" />
-                                        </figure>
-                                        <div class="caption">
-                                            <h4>LA MARCHANTA</h4>
-                                            <h3>Lorem Ipsum Dorem sit, Amet, consectur.</h3>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide slide">
-                                        <figure class="thumb">
-                                            <img src="<?php echo get_theme_image_path('img-slide-3.jpg'); ?>" alt="Imagen slide" />
-                                        </figure>
-                                        <div class="caption">
-                                            <h4>GUSTAVO VELEZ</h4>
-                                            <h3>Lorem Ipsum Dorem sit, Amet, consectur.</h3>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endif;
+                                wp_reset_postdata(); ?>
                                 <nav class="nav-control">
                                     <a href="javascript:;" class="prev"><i class="icon icon-arrow-left"></i></a>
                                     <a href="javascript:;" class="next"><i class="icon icon-arrow-right"></i></a>
@@ -124,124 +118,52 @@ get_header();
                             </div>
                         </div>
                         <div thumbsSlider="" class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <figure class="swiper-slide slide">
-                                    <img src="<?php echo get_theme_image_path('img-slide-2.jpg'); ?>" alt="Imagen slide" />
-                                </figure>
-                                <figure class="swiper-slide slide">
-                                    <img src="<?php echo get_theme_image_path('img-slide-3.jpg'); ?>" alt="Imagen slide" />
-                                </figure>
-                                <figure class="swiper-slide slide">
-                                    <img src="<?php echo get_theme_image_path('img-slide-5.jpg'); ?>" alt="Imagen slide" />
-                                </figure>
-                            </div>
+                            <?php
+                            if ($proyectos_posts->have_posts()) : ?>
+                                <div class="swiper-wrapper">
+                                    <?php while ($proyectos_posts->have_posts()) : $proyectos_posts->the_post(); ?>
+                                        <figure class="swiper-slide slide">
+                                            <img src="<?php echo get_field('cintillo'); ?>" />
+                                        </figure>
+                                    <?php endwhile; ?>
+                                </div>
+                            <?php endif;
+                            wp_reset_postdata(); ?>
                         </div>
                     </div>
                 </div>
                 <div class="slide-inspires">
                     <div class="description-inspires">
                         <h2>LO QUE NOS <span>INSPIRA</span> </h2>
-                        <a href="#!" class="btn btn-large btn-secondary"><span>mas artículos</span></a>
+                        <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="btn btn-large btn-secondary"><span>mas artículos</span></a>
                     </div>
                     <div class="swiper swiperInspires">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide slide">
-                                <div class="thumb">
-                                    <img src="<?php echo get_theme_image_path('img-slide-inspires-1.jpg'); ?>" alt="Imagen slide nos inspira">
-                                </div>
-                                <div class="description">
-                                    <div class="block space-y-4">
-                                        <h4>Cavoli Scuola</h4>
-                                        <p>Un espacio para crecer en equipo</p>
+                        <?php
+                        // Get latest posts
+                        $latest_posts = new WP_Query(array(
+                            'posts_per_page' => 5,  // Change this to the number of posts you want to display
+                        ));
+
+                        if ($latest_posts->have_posts()) : ?>
+                            <div class="swiper-wrapper">
+                                <?php while ($latest_posts->have_posts()) : $latest_posts->the_post(); ?>
+                                    <div class="swiper-slide slide">
+                                        <div class="thumb">
+                                            <?php the_post_thumbnail(); ?>
+                                        </div>
+                                        <div class="description">
+                                            <div class="block space-y-4">
+                                                <h4><?php the_title(); ?></h4>
+                                                <p><?php the_excerpt(); ?></p>
+                                            </div>
+                                            <a href="<?php the_permalink(); ?>" class="btn btn-medium btn-tertiary !h-[44px] !px-8"><span>leer más</span></a>
+                                        </div>
                                     </div>
-                                    <a href="#!" class="btn btn-medium btn-tertiary !h-[44px] !px-8"><span>leer más</span></a>
-                                </div>
+                                <?php endwhile; ?>
                             </div>
-                            <div class="swiper-slide slide swiper-slide-active">
-                                <div class="thumb">
-                                    <img src="<?php echo get_theme_image_path('img-slide-inspires-2.jpg'); ?>" alt="Imagen slide nos inspira">
-                                </div>
-                                <div class="description">
-                                    <div class="block space-y-4">
-                                        <h4>Nuevo espacio</h4>
-                                        <p>Un nuevo espacio de innovación</p>
-                                    </div>
-                                    <a href="#!" class="btn btn-medium btn-tertiary !h-[44px] !px-8"><span>leer más</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide slide">
-                                <div class="thumb">
-                                    <img src="<?php echo get_theme_image_path('img-slide-3.jpg'); ?>" alt="Imagen slide nos inspira">
-                                </div>
-                                <div class="description">
-                                    <div class="block space-y-4">
-                                        <h4>Gustavo Velez</h4>
-                                        <p>Un nuevo espacio de innovación</p>
-                                    </div>
-                                    <a href="#!" class="btn btn-medium btn-tertiary !h-[44px] !px-8"><span>leer más</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide slide">
-                                <div class="thumb">
-                                    <img src="<?php echo get_theme_image_path('img-slide-4.jpg'); ?>" alt="Imagen slide nos inspira">
-                                </div>
-                                <div class="description">
-                                    <div class="block space-y-4">
-                                        <h4>La Marchanta</h4>
-                                        <p>Un nuevo espacio de innovación</p>
-                                    </div>
-                                    <a href="#!" class="btn btn-medium btn-tertiary !h-[44px] !px-8"><span>leer más</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide slide">
-                                <div class="thumb">
-                                    <img src="<?php echo get_theme_image_path('img-slide-inspires-1.jpg'); ?>" alt="Imagen slide nos inspira">
-                                </div>
-                                <div class="description">
-                                    <div class="block space-y-4">
-                                        <h4>Cavoli Scuola</h4>
-                                        <p>Un espacio para crecer en equipo</p>
-                                    </div>
-                                    <a href="#!" class="btn btn-medium btn-tertiary !h-[44px] !px-8"><span>leer más</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide slide">
-                                <div class="thumb">
-                                    <img src="<?php echo get_theme_image_path('img-slide-inspires-2.jpg'); ?>" alt="Imagen slide nos inspira">
-                                </div>
-                                <div class="description">
-                                    <div class="block space-y-4">
-                                        <h4>Nuevo espacio</h4>
-                                        <p>Un nuevo espacio de innovación</p>
-                                    </div>
-                                    <a href="#!" class="btn btn-medium btn-tertiary !h-[44px] !px-8"><span>leer más</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide slide">
-                                <div class="thumb">
-                                    <img src="<?php echo get_theme_image_path('img-slide-3.jpg'); ?>" alt="Imagen slide nos inspira">
-                                </div>
-                                <div class="description">
-                                    <div class="block space-y-4">
-                                        <h4>Gustavo Velez</h4>
-                                        <p>Un nuevo espacio de innovación</p>
-                                    </div>
-                                    <a href="#!" class="btn btn-medium btn-tertiary !h-[44px] !px-8"><span>leer más</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide slide">
-                                <div class="thumb">
-                                    <img src="<?php echo get_theme_image_path('img-slide-4.jpg'); ?>" alt="Imagen slide nos inspira">
-                                </div>
-                                <div class="description">
-                                    <div class="block space-y-4">
-                                        <h4>La Marchanta</h4>
-                                        <p>Un nuevo espacio de innovación</p>
-                                    </div>
-                                    <a href="#!" class="btn btn-medium btn-tertiary !h-[44px] !px-8"><span>leer más</span></a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endif;
+                        wp_reset_postdata(); ?>
+
                         <nav class="nav-control">
                             <a href="javascript:;" class="prev"><i class="icon icon-arrow-left"></i></a>
                             <a href="javascript:;" class="next"><i class="icon icon-arrow-right"></i></a>

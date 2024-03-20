@@ -45,7 +45,7 @@
 				</nav>
 
 				<?php if(!empty(get_header_classes())): ?>
-				<a href="/" class="logo">
+				<a href="<?php echo home_url(); ?>" class="logo">
 					<img src="<?php echo get_theme_image_path('logo-black.png'); ?>" alt="Logo s-cavoli negro">
 				</a>
 				<?php else: ?>

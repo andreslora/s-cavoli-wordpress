@@ -17,7 +17,7 @@
 		</div>
 	</div>
 	<div class="container-fluid">
-		<a href="<?php echo get_permalink(17); ?>"><i class="icon icon-arrow-up-left"></i>ARTÍCULOS <b>RECIENTES</b></a>
+		<a href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><i class="icon icon-arrow-up-left"></i>ARTÍCULOS <b>RECIENTES</b></a>
 	</div>
 </section>
 <section class="content-detail-journal">

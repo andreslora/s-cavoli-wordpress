@@ -192,6 +192,24 @@ class Primary_Walker_Nav_Menu extends Walker_Nav_Menu
 	}
 }
 
+add_filter('template_include', 'my_custom_taxonomy_template');
+function my_custom_taxonomy_template($template)
+{
+	if (is_tax('categoria')) {
+		$new_template = locate_template(array('archive-proyectos.php'));
+		if ('' != $new_template) {
+			return $new_template;
+		}
+	}
+	return $template;
+}
+
+function custom_excerpt_length($length)
+{
+	return 20;
+}
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
+
 class Second_Walker_Nav_Menu extends Walker_Nav_Menu
 {
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)

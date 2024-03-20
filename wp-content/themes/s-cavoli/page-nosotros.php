@@ -11,7 +11,7 @@ get_header();
                     <p>Le aportamos alma y corazón a las marcas, creando una conexión auténtica con todo el que la experimenta. Así inspiramos una generación de pensadores e innovadores que se atreven a crear marcas más humanas.</p>
                     <div class="flex flex-col md:flex-row md:justify-end md:items-center gap-4 md:gap-9">
                         <a href="<?php echo get_permalink(21); ?>" class="btn btn-large btn-cuaternarios"><i class="icon icon-arrow-right"></i><span>agenda una cita</span> </a>
-                        <a href="#!" class="btn btn-large btn-tertiary"><span>descubre los servicios</span></a>
+                        <a href="#services" class="btn btn-large btn-tertiary"><span>descubre los servicios</span></a>
                     </div>
                 </div>
                 <div class="galery-our-manifest">
@@ -68,7 +68,7 @@ get_header();
             </div>
         </div>
     </section>
-    <section class="content-office-services">
+    <section id="services" class="content-office-services">
         <div class="container-fluid">
             <div class="description">
                 <h3><i class="icon icon-arrow-down-right"></i>SERVICIOS</h3>
@@ -142,7 +142,7 @@ get_header();
                 </div>
             </div>
             <div class="flex justify-center lg:justify-end lg:pr-10">
-                <a href="<?php echo get_permalink(19); ?>" class="btn btn-large btn-cuaternarios"><i class="icon icon-arrow-right"></i><span>nuestros proyectos</span></a>
+                <a href="<?php echo get_post_type_archive_link('proyectos'); ?>" class="btn btn-large btn-cuaternarios"><i class="icon icon-arrow-right"></i><span>nuestros proyectos</span></a>
             </div>
         </div>
     </section>
@@ -222,7 +222,7 @@ get_header();
                 </div>
             </div>
             <div class="flex justify-center lg:justify-end lg:pr-10">
-                <a href="<?php echo get_permalink(19); ?>" class="btn btn-large btn-cuaternarios"><i class="icon icon-arrow-right"></i><span>nuestros proyectos</span></a>
+                <a href="<?php echo get_post_type_archive_link('proyectos'); ?>" class="btn btn-large btn-cuaternarios"><i class="icon icon-arrow-right"></i><span>nuestros proyectos</span></a>
             </div>
         </div>
     </section>
@@ -232,7 +232,7 @@ get_header();
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
                 <div class="description">
                     <h2>QUEREMOS SOÑAR <br class="hidden md:block"> <span>CONTIGO</span></h2>
-                    <a href="#!" class="btn btn-large btn-secondary"><span>seamos disruptivos</span></a>
+                    <a href="<?php echo get_permalink(21); ?>" class="btn btn-large btn-secondary"><span>seamos disruptivos</span></a>
                 </div>
                 <i class="icon icon-arrow-up-left text-[32px] text-semantic-black hidden md:block"></i>
             </div>

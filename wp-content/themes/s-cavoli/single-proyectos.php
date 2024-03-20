@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="flex items-center gap-3 pb-6 md:pb-16 xxl:pb-[84px]">
                     <i class="icon icon-arrow-up-left text-[18px]"></i>
-                    <a href="/proyectos">RECIENTES <b>/ PROYECTOS</b> </a>
+                    <a href="<?php echo get_post_type_archive_link('proyectos'); ?>">RECIENTES <b>/ PROYECTOS</b> </a>
                 </div>
                 <div class="block space-y-4 pb-12">
                     <h3><?php the_title(); ?></h3>

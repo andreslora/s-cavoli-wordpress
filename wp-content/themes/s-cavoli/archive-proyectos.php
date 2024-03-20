@@ -6,7 +6,7 @@
             <h1>Proyectos</h1>
             <ul class="list-categories-project">
                 <li>
-                    <a href="<?php echo get_permalink(19); ?>" class="<?php echo get_the_ID() == 19 ? 'active' : ''; ?>">todos</a>
+                    <a href="<?php echo get_post_type_archive_link('proyectos'); ?>" class="<?php echo get_the_ID() == 19 ? 'active' : ''; ?>">todos</a>
                 </li>
                 <?php
                 $terms = get_terms(array(
@@ -17,7 +17,7 @@
                 if (!empty($terms) && !is_wp_error($terms)) {
                     foreach ($terms as $term) {
                         $active_class = check_active_project_taxonomy($term);
-                        echo '<li class="' . $active_class . '"><a href="' . esc_url(get_term_link($term)) . '">' . $term->name . '</a></li>';
+                        echo '<li><a href="' . esc_url(get_term_link($term)) . '"  class="' . $active_class . '">' . $term->name . '</a></li>';
                     }
                 }
                 ?>
